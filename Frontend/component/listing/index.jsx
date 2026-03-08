@@ -16,7 +16,7 @@ import GSTComponent from "../GSTComponent";
     
     useEffect(()=>{
        const allListing=async()=>{
-        let res=await axios.get("http://localhost:8080/listing")
+        let res=await axios.get("/listing")
         setListing(res.data);  
         console.log(res.data);
        }

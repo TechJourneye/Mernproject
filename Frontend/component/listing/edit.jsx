@@ -18,7 +18,7 @@ export default function EditListing() {
  
   useEffect(() => {
     if (!passedListing) {
-      axios.get(`http://localhost:8080/listing/${id}`)
+      axios.get(`/listing/${id}`)
         .then(res => setListing(res.data))
         .catch(err => console.log(err));
     }
@@ -54,7 +54,7 @@ export default function EditListing() {
 
     try {
      const res= await axios.put(
-        `http://localhost:8080/listing/${id}`,
+        `/listing/${id}`,
         formData,{
           withCredentials:true,
         }

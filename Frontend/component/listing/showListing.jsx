@@ -50,7 +50,7 @@ export default function ShowListing() {
     useEffect(() => {
         const fetchListing = async () => {
             try {
-                let res = await axios.get(`http://localhost:8080/listing/${id}`);
+                let res = await axios.get(`/listing/${id}`);
                 setListing(res.data);
             } catch (err) {
                 if (err.response) {
@@ -93,7 +93,7 @@ export default function ShowListing() {
     const handleDelete = async () => {
         try {
             const res = await axios.delete(
-                `http://localhost:8080/listing/${id}`,
+                `/listing/${id}`,
                 { withCredentials: true }
             );
 
@@ -114,7 +114,7 @@ export default function ShowListing() {
     const handleReviewDelete = async (reviewId) => {
         try {
             const res = await axios.delete(
-                `http://localhost:8080/listing/${id}/review/${reviewId}`,
+                `/listing/${id}/review/${reviewId}`,
                 {withCredentials:true},
             );
             // remove review from listing state
@@ -131,10 +131,6 @@ export default function ShowListing() {
     const formatDate = (dateString) => {
         const options = { year: 'numeric', month: 'short', day: 'numeric' };
         return new Date(dateString).toLocaleDateString('en-IN', options);
-    };
-
-    const renderStars = (rating) => {
-        return '⭐'.repeat(rating);
     };
 
     return (

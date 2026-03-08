@@ -18,7 +18,7 @@ export default function CreateListing() {
     try {
 
       let res = await axios.post(
-        "http://localhost:8080/listing",
+        "/listing",
         formData,
         {
           headers: {

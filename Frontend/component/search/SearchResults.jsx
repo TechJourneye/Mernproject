@@ -18,7 +18,7 @@ export default function SearchResults() {
   const search = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8080/listing/search?country=${country}`,
+        `/listing/search?country=${country}`,
         { withCredentials: true }
       );
 

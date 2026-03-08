@@ -27,7 +27,7 @@ export default function CreateReview({ onReviewCreated }) {
 
     try {
       const response = await axios.post(
-        `http://localhost:8080/listing/${id}/review`,
+        `/listing/${id}/review`,
         { review: formData },
         { withCredentials: true }
       );
