@@ -1,0 +1,14 @@
+body{
+ margin: 0px;
+ padding: 0%;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
