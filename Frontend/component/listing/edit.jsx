@@ -2,6 +2,7 @@ import { useLocation, useParams ,useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import ErrorPage from "../error";
 export default function EditListing() {
   const navigate=useNavigate()
   const { id } = useParams();
@@ -20,7 +21,7 @@ export default function EditListing() {
     if (!passedListing) {
       axios.get(`/listing/${id}`)
         .then(res => setListing(res.data))
-        .catch(err => console.log(err));
+        .catch(err => <ErrorPage error={err} />);
     }
   }, [id, passedListing]);
 

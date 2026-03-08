@@ -18,7 +18,6 @@ import GSTComponent from "../GSTComponent";
        const allListing=async()=>{
         let res=await axios.get("/listing")
         setListing(res.data);  
-        console.log(res.data);
        }
        allListing()
     },[]);
